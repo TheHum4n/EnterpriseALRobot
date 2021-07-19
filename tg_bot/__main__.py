@@ -1,7 +1,7 @@
 '''#TODO
 
-Dank-del
-2020-12-29
+IAMCR4ZY
+2021-07-19
 '''
 
 import importlib
@@ -28,7 +28,7 @@ from tg_bot import (
     URL,
     log,
     telethn,
-    KigyoINIT
+    PsychoINIT
 )
 
 # needed to dynamically load modules
@@ -36,7 +36,7 @@ from tg_bot import (
 from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
-from tg_bot.modules.helper_funcs.decorators import kigcmd, kigcallback, kigmsg
+from tg_bot.modules.helper_funcs.decorators import psycmd, psycallback, psymsg
 from tg_bot.modules.language import gs
 
 
@@ -59,7 +59,7 @@ for module_name in ALL_MODULES:
     if not imported_module.__mod_name__.lower() in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
     else:
-        raise Exception("Can't have two modules with the same name! Please change one")
+        raise Exception("Aynı ada sahip iki modül olamaz! Lütfen birini değiştir.")
 
     if hasattr(imported_module, "get_help") and imported_module.get_help:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -98,9 +98,9 @@ def send_help(chat_id, text, keyboard=None):
     '''
 
     if not keyboard:
-        kb = paginate_modules(0, HELPABLE, "help")
-        kb.append([InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion'),
-        InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
+        kb = paginate_modules(0, HELPABLE, "yardım")
+        kb.append([InlineKeyboardButton(text='Destek', url='https://t.me/The_Psychos_Group'),
+        InlineKeyboardButton(text='Geri', callback_data='start_back'), InlineKeyboardButton(text="Satır içi deneyin", switch_inline_query_current_chat="")])
         keyboard = InlineKeyboardMarkup(kb)
     dispatcher.bot.send_message(
         chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
@@ -108,7 +108,7 @@ def send_help(chat_id, text, keyboard=None):
 
 
 
-@kigcmd(command='text')
+@psycmd(command='metin')
 def test(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -119,11 +119,11 @@ def test(update: Update, context: CallbackContext):
 
     # pprint(ast.literal_eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
-    update.effective_message.reply_text("This person edited a message")
+    update.effective_message.reply_text("Bu kişi bir mesajı düzenledi.")
     print(update.effective_message)
 
-@kigcallback(pattern=r'start_back')
-@kigcmd(command='start', pass_args=True)
+@psycallback(pattern=r'start_back')
+@psycmd(command='start', pass_args=True)
 def start(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -150,14 +150,14 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text=gs(chat.id, "support_chat_link_btn"),
-                                url=f"https://t.me/YorktownEagleUnion",
+                                url=f"https://t.me/The_Psychos_Group",
                             ),
                             InlineKeyboardButton(
                                 text=gs(chat.id, "updates_channel_link_btn"),
-                                url="https://t.me/KigyoUpdates",
+                                url="https://t.me/The_Psychos",
                             ),
                             InlineKeyboardButton(
-                                text=gs(chat.id, "src_btn"),
+                                text=gs(chat.id, "kaynak_butonu"),
                                 url="https://github.com/Dank-del/EnterpriseALRobot",
                             ),
                             
@@ -166,11 +166,11 @@ def start(update: Update, context: CallbackContext):
                         [
 
                              InlineKeyboardButton(
-                                 text="Try inline",
+                                 text="Satır içi Deneyin",
                                  switch_inline_query_current_chat="",
                              ),
                              InlineKeyboardButton(
-                                text="Help",
+                                text="Yardım",
                                 callback_data="help_back",
                                 ),
                             InlineKeyboardButton(
@@ -189,7 +189,7 @@ def start(update: Update, context: CallbackContext):
 
     if update.effective_chat.type == "private":
         if args and len(args) >= 1:
-            if args[0].lower() == "help":
+            if args[0].lower() == "yardım":
                 send_help(update.effective_chat.id, (gs(chat.id, "pm_help_text")))
             elif args[0].lower() == "markdownhelp":
                 IMPORTED["extras"].markdown_help_sender(update)
@@ -205,7 +205,7 @@ def start(update: Update, context: CallbackContext):
                     send_settings(match.group(1), update.effective_user.id, True)
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
-                IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
+                IMPORTED["kurallar"].send_rules(update, args[0], from_pm=True)
 
         else:
             first_name = update.effective_user.first_name
@@ -220,15 +220,15 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text=gs(chat.id, "support_chat_link_btn"),
-                                url=f"https://t.me/YorktownEagleUnion",
+                                text=gs(chat.id, "destek_konuşma_link_btn"),
+                                url=f"https://t.me/The_Psychos_Group",
                             ),
                             InlineKeyboardButton(
                                 text=gs(chat.id, "updates_channel_link_btn"),
-                                url="https://t.me/KigyoUpdates",
+                                url="https://t.me/The_Psychos",
                             ),
                             InlineKeyboardButton(
-                                text=gs(chat.id, "src_btn"),
+                                text=gs(chat.id, "kaynak_butonu"),
                                 url="https://github.com/Dank-del/EnterpriseALRobot",
                             ),
                             
@@ -237,11 +237,11 @@ def start(update: Update, context: CallbackContext):
                         [
 
                              InlineKeyboardButton(
-                                 text="Try inline",
+                                 text="Satır içi deneyin",
                                  switch_inline_query_current_chat="",
                              ),
                              InlineKeyboardButton(
-                                text="Help",
+                                text="Yardım",
                                 callback_data="help_back",
                                 ),
                             InlineKeyboardButton(
@@ -294,7 +294,7 @@ def error_callback(update, context):
         pass
         # handle all other telegram related errors
 
-@kigcallback(pattern=r'help_')
+@psycallback(pattern=r'yardım_')
 def help_button(update, context):
     '''#TODO
 
@@ -322,14 +322,14 @@ def help_button(update, context):
                 help_text = help_list
                 help_buttons = []
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                "*{}* module:\n modülü için yardım".format(
                     HELPABLE[module].__mod_name__
                 )
                 + help_text
             )
             help_buttons.append(
-                [InlineKeyboardButton(text="Back", callback_data="help_back"),
-                InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion')]
+                [InlineKeyboardButton(text="Geri", callback_data="help_back"),
+                InlineKeyboardButton(text='Destek', url='https://t.me/The_Psychos_Group')]
             )
             query.message.edit_text(
                 text=text,
@@ -340,8 +340,8 @@ def help_button(update, context):
         elif prev_match:
             curr_page = int(prev_match.group(1))
             kb = paginate_modules(curr_page - 1, HELPABLE, "help")
-            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion'),
-            InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
+            kb.append([InlineKeyboardButton(text='Destek', url='https://t.me/The_Psychos_Group'),
+            InlineKeyboardButton(text='Geri', callback_data='start_back'), InlineKeyboardButton(text="Satır içi deneyin", switch_inline_query_current_chat="")])
             query.message.edit_text(
                 text=gs(chat.id, "pm_help_text"),
                 parse_mode=ParseMode.MARKDOWN,
@@ -350,9 +350,9 @@ def help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            kb = paginate_modules(next_page + 1, HELPABLE, "help")
-            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion'),
-            InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
+            kb = paginate_modules(next_page + 1, HELPABLE, "yardım")
+            kb.append([InlineKeyboardButton(text='Support', url='https://t.me/The_Psychos_Group'),
+            InlineKeyboardButton(text='Geri', callback_data='start_back'), InlineKeyboardButton(text="Satır içi deneyin", switch_inline_query_current_chat="")])
             query.message.edit_text(
                 text=gs(chat.id, "pm_help_text"),
                 parse_mode=ParseMode.MARKDOWN,
@@ -360,7 +360,7 @@ def help_button(update, context):
             )
 
         elif back_match:
-            kb = paginate_modules(0, HELPABLE, "help")
+            kb = paginate_modules(0, HELPABLE, "yardım")
             kb.append([InlineKeyboardButton(text='Support', url='https://t.me/YorkTownEagleUnion'),
             InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
             query.message.edit_text(
@@ -392,12 +392,12 @@ def get_help(update, context):
     if chat.type != chat.PRIVATE:
 
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Mümkün komutları görmek için bana özelden ulaşın.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="Yardım",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -469,12 +469,12 @@ def send_settings(chat_id, user_id, user=False):
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any chat settings available :'(\nSend this "
-                "in a group chat you're admin in to find its current settings!",
+                "Görünüşe göre grup ayarları yok :'(\nGrup  "
+                "ayarlarını görmek için bunu admin olduğunuz bir grupta gönderin.!",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
-@kigcallback(pattern=r"stngs_")
+@psycallback(pattern=r"stngs_")
 def settings_button(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -495,7 +495,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(
+            text = "*{}* şu ayarları içeriyor *{}* module:\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__
             ) + CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(
@@ -505,7 +505,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="Geri",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -518,8 +518,8 @@ def settings_button(update: Update, context: CallbackContext):
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(chat.title),
+                "Merhaba! Bunun içi çok ayar var {} - devam et ve "
+                "en çok ilgilendiğini seç.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         curr_page - 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -532,8 +532,8 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(chat.title),
+                "Merhaba! Bunun içi çok ayar var {} - devam et ve "
+                "en çok ilgilendiğini seç.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         next_page + 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -545,8 +545,8 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                text="Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(escape_markdown(chat.title)),
+                text="Merhaba! Bunun içi çok ayar var {} - devam et ve "
+                "en çok ilgilendiğini seç.".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
@@ -557,16 +557,16 @@ def settings_button(update: Update, context: CallbackContext):
         bot.answer_callback_query(query.id)
         query.message.delete()
     except BadRequest as excp:
-        if excp.message == "Message is not modified":
+        if excp.message == "Messaj değiştirilmemiş.":
             pass
         elif excp.message == "Query_id_invalid":
             pass
-        elif excp.message == "Message can't be deleted":
+        elif excp.message == "Mesaj silinemez.":
             pass
         else:
             log.exception("Exception in settings buttons. %s", str(query.data))
 
-@kigcmd(command='settings')
+@psycmd(command='ayarlar')
 def get_settings(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -582,7 +582,7 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Bu grubun mesajlarını almak için buraya tıklayın, tabi grup sizinse."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup(
@@ -599,12 +599,12 @@ def get_settings(update: Update, context: CallbackContext):
                 ),
             )
         else:
-            text = "Click here to check your settings."
+            text = "Ayarlarınızı kontrol etmek için buraya tıklayın."
 
     else:
         send_settings(chat.id, user.id, True)
 
-@kigcmd(command='donate')
+@psycmd(command='donate')
 def donate(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -613,9 +613,9 @@ def donate(update: Update, context: CallbackContext):
         context: CallbackContext -
     '''
 
-    update.effective_message.reply_text("I'm free for everyone! >_<")
+    update.effective_message.reply_text("Ben herkes için ücretsizim! >_<")
 
-@kigmsg((Filters.status_update.migrate))
+@psymsg((Filters.status_update.migrate))
 def migrate_chats(update: Update, context: CallbackContext):
     '''#TODO
 
@@ -634,11 +634,11 @@ def migrate_chats(update: Update, context: CallbackContext):
     else:
         return
 
-    log.info("Migrating from %s, to %s", str(old_chat), str(new_chat))
+    log.info("%s'dan, %s'a taşınıyor", str(old_chat), str(new_chat))
     for mod in MIGRATEABLE:
         mod.__migrate__(old_chat, new_chat)
 
-    log.info("Successfully migrated!")
+    log.info("Başarıyla Taşındı!")
     raise DispatcherHandlerStop
 
 
@@ -647,7 +647,7 @@ def main():
     # dispatcher.add_error_handler(error_handler)
 
     if WEBHOOK:
-        log.info("Using webhooks.")
+        log.info("Webhook'lar kullanılıyor.")
         updater.start_webhook(listen="127.0.0.1", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
@@ -656,10 +656,10 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
-        KigyoINIT.bot_id = dispatcher.bot.id
-        KigyoINIT.bot_username = dispatcher.bot.username
-        KigyoINIT.bot_name = dispatcher.bot.first_name
+        log.info(f"Psycho başlatıldı, uzun yoklama kullanılıyor. | BOT: [@{dispatcher.bot.username}]")
+        PsychoINIT.bot_id = dispatcher.bot.id
+        PsychoINIT.bot_username = dispatcher.bot.username
+        PsychoINIT.bot_name = dispatcher.bot.first_name
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
@@ -668,6 +668,6 @@ def main():
     updater.idle()
 
 if __name__ == "__main__":
-    log.info("[KIGYO] Successfully loaded modules: " + str(ALL_MODULES))
+    log.info("[Psycho] Modüller başarıyla yüklendi: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
