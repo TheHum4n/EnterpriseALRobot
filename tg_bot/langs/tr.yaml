@@ -1,0 +1,463 @@
+# Ana dilindeki dil adı
+dil: "Türkçe 🇺🇲"
+# bu çeviri üzerinde çalışan kişilerin adı
+yazarlar: "@IAMCR4ZY"
+
+# Diller
+curr_chat_lang: "Merhaba. DVarsayılan dilin {}, Aşağıdaki butonlarda uygun olan dili seçin :)"
+set_chat_lang: "Harika, bundan böyle {} konuşacağım!"
+
+
+pm_start_text: |
+   Merhaba ben {},
+   Ben bazı eğlenceli ekstralara sahip bir Anime temalı grup yönetimi botuyum ;)
+   
+   Çeşitli şeyler yapabilirim, bunlardan en yaygın olanı:
+   - *Yasaklama izinleri* olan kullanıcıları kısıtlayın.
+   - Kullanıcıları uygun biçimlendirme ile medya + metin ve butonlarla selamlayın.
+   - Benim *flood önleme* modülümü kullanarak sohbetinizde flood kullanıcılarnıı kısıtlayın.
+   - Kullanıcıları ayarlanan seçeneklere göre *uyarın* ve buna göre kısıtlayın.
+   - Uygun biçimlendirme ve yanıt işaretlemesi ile notları ve filtreleri kaydedin.
+   
+   Daha da fazlası var! bu sadece buzdağının görünen kısmı. İhtiyacım olduğunu not et
+   düzgün çalışması için uygun yönetici izinleriyle terfi ettirilmelidir.
+   Yoksa dediğim gibi çalışamam.
+   
+   *Daha fazla bilgi edinmek için yardıma tıklayın!*
+   
+grp_start_text: "Merhaba, ben Psycho."
+
+pm_help_text: |
+   Merhaba! Benim adım *Psycho*. *The Psycho's Channel'ın* bir parçasıyım. Sahibim @dank_as_fuck Çevirmenim @IAMCR4ZY
+   Birkaç eğlenceli ekstraya sahip modüler bir grup yönetimi botuyum! Bazıları hakkında fikir edinmek için aşağıdakilere bir göz atın
+   sana yardım edebileceğim şeyler.
+   *Ana* komutlar mevcuttur:
+    • /start: Beni başlatır, hayatta olup olmadığımı kontrol etmek için kullanılabilir.
+    • /help: Bu mesajı PM olarak alıyorsunuz.
+    • /language: Bot dilini değiştirin.
+    • /ayarlar:
+      - PM'de: desteklenen tüm modüller için ayarlarınızı gönderir.
+      - bir grupta: sizi tüm sohbet ayarlarıyla birlikte pm'ye yönlendirir.
+    Belirli modüller hakkında belgeler almak için aşağıdaki düğmelere tıklayın!
+
+add_bot_to_group_btn: "Psycho'yu Gruba Ekle"
+support_chat_link_btn: "Destek"
+update_channel_link_btn: "Güncellemeler"
+src_btn: "Kaynak Kodu"
+
+admin_help: |
+   • `/admins`*:* sohbetteki yöneticilerin listesi
+
+   *Yalnızca yöneticiler:*
+   • `/pin`*:* yanıtlanan mesajı sessizce sabitler - kullanıcılara bildirim vermek için ``loud'' veya `'notify'' ekleyin.
+   • `/unpin`*:* sabitlenmiş mesajın sabitlemesini kaldırır.
+   • `/invitelink`*:* davet bağlantısı alır.
+   • `/promote`*:* yanıtlanan kullanıcıyı yönetici olarak atar.
+   • `/demote`*:* yanıtlanan kullanıcının yetkisini düşürür.
+   • `/title <buraya başlık>`*:* botun terfi ettirdiği bir yönetici için özel bir başlık ayarlar.
+
+afk_help: |
+   - /afk <neden>: kendinizi AFK (klavyeden uzakta) olarak işaretleyin.
+   - brb <sebep>: afk komutuyla aynı - ancak bir komut değil.
+   AFK olarak işaretlendiğinde, herhangi bir söze, müsait olmadığınızı söyleyen bir mesajla cevap verilecektir!
+
+anilist_help: |
+    *AniListe*
+    Bu modül yardımıyla anime, manga veya karakterler hakkında bilgi edinin! Tüm veriler [AniList](anilist.co) adresinden alınır. (İngilizce)
+    *Kullanılabilir komutlar:*
+     - /anime <anime>: anime hakkında bilgi verir.
+     - /character <karakter>: karakter hakkında bilgi verir.
+     - /manga <manga>: manga hakkında bilgi verir.
+
+antiflood_help: |
+Antiflood, art arda x'ten fazla mesaj gönderen kullanıcılar hakkında işlem yapmanızı sağlar. Flood sınırını aşmak
+    bu kullanıcının kısıtlanmasına neden olacaktır.
+     Bu, arka arkaya 10'dan fazla mesaj gönderirlerse kullanıcıları sessize alır, botlar yoksayılır.
+     • `/flood`*:* Mevcut sel kontrol ayarını alın
+    • *Yalnızca yöneticiler:*
+     • `/setflood <int/'no'/'off'>`*:* flood kontrolünü etkinleştirir veya devre dışı bırakır.
+     *Örnek:* `/setflood 10`
+     • `/setfloodmode <ban/kick/mute/tban/tmute> <değer>`*:* Kullanıcı flood sınırını aştığında gerçekleştirilecek eylem. ban/kick/mute/tmute/tban
+    • *Not:*
+     • tban ve tmute için değer doldurulmalıdır!!
+     Örnekler:
+     "5m" = 5 dakika
+     "6h" = 6 saat
+     "3d" = 3 gün
+     "1w" = 1 hafta
+
+approve_help: |
+     Bazen bir kullanıcıya istenmeyen içerik göndermeyeceğine güvenebilirsiniz.
+     Belki onları yönetici yapmak için yeterli değildir, ancak kilitler, kara listeler ve antiflood'un bunlara uygulanmaması sizin için sorun olmayabilir.
+     Onaylar bunun içindir - güvenilir kullanıcıların göndermelerine izin vermek için onaylayın.
+     *Yönetici komutları:*
+     • `/approval`*:* Mevcut sohbette bir kullanıcının onay durumunu kontrol edin.
+     • `/approve`*:* Bir kullanıcıyı onaylar. Kilitler, kara listeler ve flood önleme artık onlar için geçerli olmaz.
+     • `/unapprove`*:* Bir kullanıcının onaylamaması. Artık yine kilitlere, kara listelere ve flood önlemeye tabi olacaklar.
+     • `/approved`*:* Tüm onaylı kullanıcıları listeleyin.
+     • `/unapproveall`*:* Sohbetteki *TÜM* kullanıcıları onaylama. Bu geri alınamaz.
+
+backup_help: |
+    *Yalnızca yönetici:*
+     - /import: mümkün olduğunca içe aktarmak için bir grup uşak yedekleme dosyasını yanıtlayın, aktarımı süper basit hale getirin! Not \
+       Telgraf kısıtlamaları nedeniyle dosyalar/fotoğraflar içe aktarılamıyor.
+     - /export: Dışa aktarılacak grup verilerini dışa aktarın: kurallar, notlar (belgeler, resimler, müzik, video, ses, ses, metin, metin düğmeleri)
+
+bans_help: |
+    - /kickme: komutu veren kullanıcıyı atar.
+
+     *Yalnızca yönetici:*
+    - /ban <kullanıcı etiketi>>: bir kullanıcıyı yasaklar (etiket veya yanıt yoluyla).
+    - /tban <kullanıcı etiketi>> x(m/h/d): bir kullanıcıyı x kez yasaklar (etiket veya yanıt yoluyla). m = dakika, h = saat, d = gün.
+    - /unban <kullanıcı etiketi>>: bir kullanıcının yasağını kaldırır (etiket veya yanıt yoluyla).
+    - /kick <kullanıcı etiketi>: bir kullanıcıyı gruptan atar (etiket veya yanıt yoluyla).
+
+blacklist_help: |
+    Kara listeler, belirli tetikleyicilerin bir grupta söylenmesini engellemek için kullanılır. Tetikleyiciden her bahsedildiğinde, mesaj hemen silinecektir. Bazen bunu uyarı filtreleriyle eşleştirmek iyi bir kombinasyondur!
+
+    *NOT*: Kara listeler grup yöneticilerini etkilemez.
+
+     • `/kara liste`*:* Kara listeye alınmış mevcut kelimeleri görüntüleyin.
+
+    Yalnızca yönetici:
+     • `/addblacklist <tetikleyiciler>`*:* Kara listeye bir tetikleyici ekleyin. Her satır bir tetikleyici olarak kabul edilir, bu nedenle farklı satırlar kullanmak birden fazla tetikleyici eklemenize olanak tanır.
+     • `/unblacklist <tetikleyiciler>`*:* Tetikleyicileri kara listeden kaldırın. Aynı satırsonu mantığı burada da geçerlidir, böylece aynı anda birden fazla tetikleyiciyi kaldırabilirsiniz.
+     • `/blacklistmode <off/del/warn/ban/kick/mute/tban/tmute>`*:* Birisi kara listeye alınmış sözcükleri gönderdiğinde gerçekleştirilecek eylem.
+
+temizleyici_yardım: |
+    - /cleanbluetext <on/off/yes/no> - komutları gönderdikten sonra temizler.
+    - /ignorecleanbluetext <kelime> - komutun otomatik olarak temizlenmesini engeller.
+    - /unignorecleanbluetext <kelime> - komutun otomatik olarak temizlenmesini engeller.
+    - /listcleanbluetext - şu anda beyaz listeye alınmış komutları listeler.
+
+Connections_help: |
+    - /connect: bir sohbete bağlan. (Bir grupta /connect veya PM'de /connect <grup id> ile yapılabilir.)
+    - /connection: bağlı sohbetleri listeler.
+    - /disconnect: sohbetten bağlantıyı keser.
+    - /helpconnect: uzaktan yapılabilecek komutları listeler.
+
+     *Yalnızca yönetici:*
+    - /allowconnect <yes/no>: bir kullanıcının sohbete bağlanmasına izin verir
+
+cust_filters_help: |
+    • `/filters`*:* Sohbete kaydedilen tüm aktif filtreleri listeler.
+
+    *Yalnızca yöneticiler:*
+    • `/filter <anahtarkelime> <yanıt mesajı>`*:* Bu sohbete bir filtre ekleyin. Bot artık 'anahtarkelime' olduğunda bu mesajı yanıtlayacak
+      bahsediliyor. Bir çıkartmaya bir anahtar kelime ile cevap verirseniz, bot o çıkartma ile cevap verecektir. NOT: Tüm filtre
+      anahtar kelimeler küçük harflerle yazılmıştır. Anahtar kelimenizin bir cümle olmasını istiyorsanız, tırnak işaretleri kullanın. Örneğin: /filter "Merhaba nasılsın?"
+    • `/stop <filter anahtarkelime>`*:* Bu filtreyi durdurun.
+
+     *Yalnızca sohbet oluşturucu:*
+    • `/removeallfilters`*:* Tüm sohbet filtrelerini bir kerede kaldırın.
+
+      *Not*: Filtreler ayrıca {first}, {last} vb. ve butonlar gibi markdown formatlayıcılarını da destekler.
+        Daha fazla bilgi için `/markdownhelp`i kontrol edin!
+
+disable_help: |
+    Botun sunduğu her özelliği herkes istemez. Bazı komutlar en iyisidir
+    kullanılmayanları kaldırma; spam ve kötüye kullanımı önlemek için.
+
+    Bu, sık kullanılan bazı komutları devre dışı bırakmanıza izin verir, böylece kimse bunları kullanamaz.
+    Ayrıca, onları otomatik olarak silmenize izin vererek, insanların mavi mesaj göndermesini engeller.
+
+     • /cmds: Devre dışı bırakılabilen komutların mevcut durumunu kontrol edin.
+
+     *Yalnızca yönetici:*
+     • /enable <cmd ismi>: Bu komutu etkinleştirin.
+     • /disable <cmd ismi>: Bu komutu devre dışı bırakın.
+     • /listcmds: Tüm olası devre dışı bırakılabilir komutları listeler.
+
+federals_help: |
+    Bir spam gönderici grubunuza girmeye başlayana kadar her şey eğlencelidir ve onu engellemeniz gerekir. O zaman gitgide daha fazlasını yasaklamaya başlaman gerekiyor ve bu canımı yakıyor.
+    Ama o zaman birçok grubunuz var ve bu spam göndericinin gruplarınızdan birinde olmasını istemiyorsunuz - nasıl başa çıkabilirsiniz? Tüm gruplarınızda manuel olarak engellemeniz gerekiyor mu?
+    *Artık yok!* Federasyon ile diğer tüm sohbetlerle örtüşen bir sohbette ban yapabilirsiniz.
+    Hatta federasyon yöneticileri atayabilirsiniz, böylece güvenilir yöneticiniz, korumak istediğiniz sohbetlerdeki tüm spam göndericileri yasaklayabilir.
+    
+    *Tüm komutlar hakkında derinlemesine bilgi edinmek için aşağıdaki butonlara tıklayın.*
+
+FED_OWNER_HELP: | 
+  *Yalnızca Fed Sahibi:*
+    • `/newfed <fed_adı>`*:* Bir Federasyon oluşturur, kullanıcı başına bir tane izin verilir.
+    • `/renamefed <fed_id> <yeni_federasyon_adı>`*:* Beslenen kimliği yeni bir adla yeniden adlandırır.
+    • `/dellfed <fed_id>`*:* Bir Federasyonu ve onunla ilgili tüm bilgileri silin. Engellenen kullanıcıları iptal etmeyecek.
+    • `/fpromote <kullanıcı>`*:* Kullanıcıyı federasyon yöneticisi olarak atar. 'Fed Yöneticileri' altındaki kullanıcı için tüm komutları etkinleştirir
+    • `/fdemote <kullanıcı>`*:* Kullanıcıyı federasyon yöneticisinden normal bir kullanıcıya dönüştürür.
+    • `/subfed <fed_id>`*:* Belirli bir fed kimliğine abone olur, abone olunan fed'den gelen yasaklar, fed'inizde de olur.
+    • `/unsubfed <fed_id>`*:* Belirli bir beslenen kimliğin aboneliğini iptal eder.
+    • `/setfedlog <fed_id>`*:* Grubu, federasyon için bir beslenen günlük raporu tabanı olarak ayarlar.
+    • `/unsetfedlog <fed_id>`*:* Grubu, federasyon için beslenen günlük raporu tabanı olmaktan alıkoyar.
+    • `/fbroadcast <mesaj>`*:* Fed'inize katılan tüm gruplara bir mesaj yayınlar.
+    • `/fedsubs`*:* Grubunuzun `(şimdilik bozuk )` abone olduğu yayınları gösterir.
+
+FED_ADMIN_HELP: |
+    *Fed Yöneticileri:*
+    • `/fban <kullanıcı> <sebep>`*:* Fed bir kullanıcıyı yasaklar
+    • `/unfban <kullanıcı> <sebep>`*:* Bir kullanıcıyı fed yasağından kaldırır.
+    • `/fedinfo <fed_id>`*:* Belirtilen Federasyon hakkında bilgi verir.
+    • `/joinfed <fed_id>`*:* Federasyondaki mevcut sohbete katılın. Bunu yalnızca sohbet sahipleri yapabilir. Her sohbet yalnızca bir Federasyonda olabilir
+    • `/leavefed <fed_id>`*:* Verilen Federasyondan ayrılın. Bunu yalnızca sohbet sahipleri yapabilir.
+    • `/setfrules <kurallar>`*:* Federasyon kurallarını düzenle.
+    • `/fedadmins`*:* Federasyon yöneticisini göster.
+    • `/fbanlist`*:* Şu anda Federasyonda mağdur olan tüm kullanıcıları görüntüler.
+    • `/fedchats`*:* Federasyona bağlı tüm sohbetleri alın.
+    • `/chatfed `*:* Geçerli sohbette Federasyonu görün.
+
+FED_USER_HELP: |
+    *Herhangi bir kullanıcı:*
+    • `/fbanstat`*:* Sizin/veya yanıtladığınız kullanıcının veya kullanıcı adının bir yerde fbanlı olup olmadığını gösterir.
+    • `/fednotif <on/off>`*:* fbanlı/fbanlı olmayan kullanıcılar varken federasyon ayarları PM'de değil
+    • `/frules`*:* Federasyon düzenlemelerine bakın.
+
+formt_help_bse: |
+    Psycho, mesajlarınızı daha anlamlı hale getirmek için çok sayıda biçimlendirme seçeneğini destekler. Bir göz at!
+
+md_help: |
+ <b>Markdown Biçimlendirmesi</b>
+      İletinizi *kalın*, _italik_, -altı çizili- ve çok daha fazlasını kullanarak biçimlendirebilirsiniz. Devam edin ve deneme yapın!
+      <b>Desteklenen şekil</b>:
+      - <code>`kod sözcükleri`</code>: Tek aralıklı yazı tipleri için ters işaretler kullanılır. Şu şekilde gösterilir: <code>kod sözcükleri</code>.
+      - <code>_italik kelimeler_</code>: İtalik yazı tipleri için alt çizgi kullanılır. Şu şekilde gösterilir: <i>italik kelimeler</i>.
+      - <code>*kalın kelimeler*</code>: Kalın yazı tipleri için yıldız işaretleri kullanılır. Şu şekilde gösterilir: <b>kalın kelimeler</b>.
+      - <code>~üstü çizili~</code>: Üstü çizili için Tildes kullanılır. Şu şekilde gösterilir: <strike>üstü çizili</strike>.
+      - <code>[hyperlink](ornek.com)</code>: Bu, köprüler için kullanılan biçimlendirmedir. Şu şekilde gösterilir: <a href="https://ornek.com/">köprü</a>.
+      - <code>[Düğmem](buttonurl://ornek.com)</code>: Bu, düğmeleri oluşturmak için kullanılan biçimlendirmedir. Bu örnek, tıklandığında <code>ornek.com</code>'u açan "Butonum" adlı bir düğme oluşturacaktır.
+      Aynı satırda butonları göndermek istiyorsanız, <code>:aynı</code> formatını kullanın.
+      <b>Örnek:</b>
+      <code>[buton 1](buttonurl://ornek.com)</code>
+      <code>[buton 2](buttonurl://ornek.com:aynı)</code>
+      <code>[buton 3](buttonurl://ornek.com)</code>
+      Bu, düğme 1 ve 2'yi aynı satırda, altında 3 ile gösterecektir.
+filling_help: |
+      <b>Dolgular</b>
+      Mesajınızın içeriğini bağlamsal verilerle de özelleştirebilirsiniz. Örneğin, hoş geldiniz mesajında ​​bir kullanıcıdan adıyla bahsedebilir veya bir filtrede ondan bahsedebilirsiniz!
+      Bunları notlarda bir kullanıcıdan bahsetmek için de kullanabilirsiniz!
+      <b>Desteklenen dolgular:</b>
+      - <code>{first}</code>: Kullanıcının adı.
+      - <code>{last}</code>: Kullanıcının soyadı.
+      - <code>{fullname}</code>: Kullanıcının tam adı.
+      - <code>{username}</code>: Kullanıcının kullanıcı adı. Ellerinde yoksa, bunun yerine kullanıcıdan bahseder.
+      - <code>{mention}</code>: Kullanıcıdan ilk adıyla bahseder.
+      - <code>{id}</code>: Kullanıcının kimliği.
+      - <code>{chatname}</code>: Sohbetin adı.
+
+fun_help: |
+  • /runs: bir dizi yanıttan rastgele bir dize yanıtlar.
+     • /pat: birini okşa, sevimli olanlar için harika bir şey :3
+     • /slap: bir kullanıcıyı tokatla ya da cevap değilse kendini tokatlat.
+     • /shrug : omuz silkme XD.
+     • /table : flip/unflip :v.
+     • /decide : Rastgele evet/hayır/belki yanıtları
+     • /toss : Yazı tura atar
+     • /roll : Bir zar atın.
+     • /rlg : Kulakları, burnu ve ağzı birleştirin ve bir emo yaratın ;-;
+     • /shout <anahtar kelime>: yüksek sesle haykırmak istediğiniz her şeyi yazın.
+     • /stickerid: kimliğini almak için bir çıkartmayı yanıtlayın.
+     • /getsticker: ham PNG görüntüsünü almak için bir çıkartmayı yanıtlayın.
+     • /steal: paketinize eklemek için bir çıkartmayı veya resmi yanıtlayın.
+
+antispam_help: |
+     *Yalnızca yöneticiler:*
+      • `/antispam <on/off/yes/no>`*:* Antispam teknolojimizi değiştirir veya mevcut ayarlarınızı döndürür.
+
+     Tüm gruplarda spam göndericileri yasaklamak için bot geliştiricileri tarafından kullanılan Anti-Spam. Bu koruma
+     spam floodlarını olabildiğince çabuk bir şekilde kaldırarak siz ve gruplarınızı güvende tutar.
+     *Not:* Kullanıcılar @YorkTownEagleUnion adresinde gban'lara itiraz edebilir veya spam göndericileri bildirebilir
+
+     Psycho ayrıca, spam göndericileri sohbet odanızdan mümkün olduğunca kaldırmak için @Spamwatch ve @Intellivoid'in SpamProtectionBot API'sini entegre eder!
+     *SpamWatch nedir?*
+     SpamWatch, spam robotları, troller, bitcoin spam göndericileri ve kötü karakterlerden oluşan sürekli güncellenen büyük bir yasak listesi tutar.
+     Spam göndericilerin grubunuzdan otomatik olarak uzaklaştırılmasına sürekli olarak yardımcı olun.
+     *Not:* Kullanıcılar spam izleme yasaklarına @SpamwatchSupport adresinden itiraz edebilir.
+
+     *Spam koruması nedir?*
+     SpamProtection, sohbetinizin spam robotlarından, dolandırıcılardan ve pedofillerden arınmış olmasını sağlayan yeni AI antispam hizmetidir.
+     @Intellivoid'in Coffeehouse Yapay Motorunu kullanır. Her yasak, kesinleşmeden önce gerçekten güvenilir kişiler tarafından kontrol edilir.
+
+gtranslate_help: |
+     • Uzun bir mesaja yanıt olarak `/tr` veya `/tl` (dil kodu)
+      *Örnek:*
+       `/tr en`*:* bir şeyi İngilizce'ye çevirir
+       `/tr hi-en`*:* Hintçe'yi İngilizce'ye çevirir.
+locks_help: |
+   Çıkartmalar sizi rahatsız ediyor mu? Veya bağlantı paylaşan insanlardan kaçınmak mı istiyorsunuz? Veya resimlerden?
+     Doğru yerdesiniz!
+     Kilit modülü, sistemdeki bazı ortak öğeleri kilitlemenizi sağlar.
+     Telegram dünyası; bot onları otomatik olarak siler!
+
+      • `/locktypes`*:* Tüm olası kilit türlerini listeler.
+
+     *Yalnızca yöneticiler:*
+      • `/lock <tür>`*:* Belirli bir türdeki öğeleri kilitle (özel olarak kullanılamaz)
+      • `/unlock <tür>`*:* Belirli bir türdeki öğelerin kilidini açın (özel olarak kullanılamaz)
+      • `/locks`*:* Bu sohbetteki mevcut kilit listesi.
+
+     Kilitler, bir grubun kullanıcılarını kısıtlamak için kullanılabilir.
+     Örneğin:
+     URL'leri kilitleme, URL'leri olan tüm mesajları otomatik olarak siler, kilitleme çıkartmaları tüm mesajları kısıtlar
+     yönetici olmayan kullanıcıların çıkartma gönderme vb.
+     Botları kilitlemek, yönetici olmayanların sohbete bot eklemesini engeller.
+
+     *Not:*
+      • Kilit açma izni *info*, üyelerin (yönetici olmayanların) açıklama veya grup adı gibi grup bilgilerini değiştirmesine olanak tanır
+      • Kilit açma izni *pin*, üyelerin (yönetici olmayanların) bir gruptaki bir mesajı sabitlemesine izin verir
+
+log_help: |
+      *Yalnızca yöneticiler:*
+      • `/logchannel`*:* günlük kanal bilgilerini alır.
+      • `/setlog`*:* günlük kanalını ayarlar.
+      • `/unsetlog`*:* günlük kanalının ayarını kaldırır.
+
+      Günlük kanalının ayarlanması şu şekilde yapılır:
+      • botu istenilen kanala eklemek (yönetici olarak!)
+      • kanalda `/setlog` gönderme
+      • `/setlog`un gruba iletilmesi
+
+markdown_help_text: |
+ Markdown, Telegram tarafından desteklenen çok güçlü bir biçimlendirme aracıdır. Bunu sağlamak için Psycho'nun bazı geliştirmeleri var.
+      kaydedilen mesajlar doğru şekilde ayrıştırılır ve düğmeler oluşturmanıza olanak tanır.
+
+      - <code>_italic_</code>: metni '_' ile sarmak italik metin üretecektir
+      - <code>*bold*</code>: metni '*' ile sarmak kalın metin üretecektir
+      - <code>`code`</code>: metni ``` ile sarmak, 'kod' olarak da bilinen tek aralıklı metin üretecektir
+      - <code>[herhangibiryazı](herhangibirURL)</code>: bu bir bağlantı oluşturur - mesaj sadece <code>bir metin</code> gösterir,
+      ve üzerine tıklamak, sayfayı <code>someURL</code> adresinde açacaktır.
+      EG: <code>[örnek](ornek.com)</code>
+
+      - <code>[butonyazısı](buttonurl:herhangibirURL)</code>: Bu, kullanıcıların telgraf almasına izin veren özel bir geliştirmedir
+      işaretlerindeki düğmeler. <code>buttontext</code>, düğmede görüntülenen şey olacaktır ve <code>herhangibirurl</code>
+      açılan url olacaktır.
+      EG: <code>[Bu bir butondur](buttonurl:ornek.com)</code>
+
+      Aynı satırda birden fazla düğme istiyorsanız, şu şekilde :same kullanın:
+      <code>[bir](buttonurl://ornek.com)
+      [iki](buttonurl://google.com:same)</code>
+      Bu, satır başına bir düğme yerine tek bir satırda iki düğme oluşturacaktır.
+
+      Mesajınızın sadece bir düğmeden başka bir metin içermesi <b>ZORUNLUDUR</b>!
+
+misc_help: |
+  • /id: geçerli grup kimliğini alır. Bir mesaja cevap vererek kullanılırsa, o kullanıcının kimliğini alır.
+      • /gifid: dosya kimliğini size söylemem için bana bir gifi yanıtlayın.
+      • /info: bir kullanıcı hakkında bilgi alın.
+      • /markdownhelp: Telgrafta işaretlemenin nasıl çalıştığının kısa bir özeti - yalnızca özel sohbetlerde çağrılabilir.
+      • /ud <kelime>: Aramak istediğiniz kelimeyi veya ifadeyi yazın.
+      • /urban <kelime>: /ud ile aynı
+      • /paste - `nekobin.com`da yapıştırma yapın
+      • /react: Rastgele bir reaksiyonla reaksiyona girer
+      • /weebify <metin>: Webleştirilmiş bir metin döndürür
+      • /tr (dil kodu) uzun bir mesaja cevap olarak.
+      • /time <sorgu> : Bir saat dilimi hakkında bilgi verir.
+      • /nakit : para birimi dönüştürücü
+        örnek sözdizimi: /cash 1 USD INR
+      • /getid : sohbet, kullanıcı ve sohbet mesajının kimliklerini alın.
+      • /spbinfo : @Intellivoid'in SpamProtection API'sinden bir kullanıcı hakkında bilgi alın.
+      ────────────────────────────
+      *Son.FM*
+      Bu modül yardımıyla ne dinlediğinizi paylaşın!
+      *Kullanılabilir komutlar:*
+      • /setuser <kullanıcıadı>: last.fm kullanıcı adınızı ayarlar.
+      • /clearuser: last.fm kullanıcı adınızı botun veritabanından kaldırır.
+      • /lastfm: last.fm'de skropladığınız şeyi döndürür.
+
+muting_help: |
+      *Yalnızca yöneticiler:*
+       • `/mute <kullanıcı etiketi>`*:* kullanıcıyı susturur. Ayrıca, yanıtlanan kullanıcıyı susturarak yanıt olarak da kullanılabilir.
+       • `/tmute <kullanıcı etiketi> x(m/h/d)`*:* bir kullanıcıyı x kez sessize alır. (tanıtıcı veya yanıt yoluyla). "m" = "dakika", "h" = "saat", "d" = "günler".
+       • `/unmute <kullanıcı etiketi>`*:* bir kullanıcının sesini açar. Ayrıca, yanıtlanan kullanıcıyı susturarak yanıt olarak da kullanılabilir.
+
+notes_help: |
+      • `/get <notadı>`*:* notu bu notadı ile alır.
+       • `#<notadı>`*:* /get ile aynı
+       • `/notes` veya `/saved`*:* bu sohbetteki tüm kayıtlı notları listeler.
+       • `/number` *:* Listedeki o numaranın notunu çeker.
+        Bir notun içeriğini herhangi bir biçimlendirme olmadan almak istiyorsanız, `/get <notadı> noformat` kullanın. Bu
+        geçerli bir notu güncellerken faydalı olabilir.
+
+        *Yalnızca yöneticiler:*
+       • `/save <notadı> <notverisi>`*:* notları notadı adında bir not olarak kaydeder
+        Standart markdown bağlantı sözdizimi kullanılarak bir nota bir buton eklenebilir - bağlantının başına yalnızca bir
+         "buttonurl:" bölümü ekleyin, şu şekilde: "[herhangibirlink](buttonurl:ornek.com)'. Daha fazla bilgi için `/markdownhelp`i kontrol edin.
+       • `/save <notadı>`*:* cevaplanan mesajı not ismiyle bir not olarak kaydeder
+       • `/clear <notadı>`*:* bu isimli notu temizler.
+       • `/removeallnotes`*:* gruptaki tüm notları kaldırır.
+       *Not:* Not adları büyük/küçük harfe duyarlı değildir ve kaydedilmeden önce otomatik olarak küçük harfe dönüştürülür.
+
+purge_help: |
+       *Yalnızca yönetici:*
+        • /del: yanıtladığınız mesajı siler
+        • /purge: bununla cevaplanan mesaj arasındaki tüm mesajları siler.
+        • /purge <integer X>: cevaplanan mesajı ve bir mesaja cevap verilmişse onu takip eden X mesajlarını siler.
+
+reports_help: |
+       • `/report <neden>`*:* yöneticilere bildirmek için bir mesajı yanıtlayın.
+        • `@admin`*:* yöneticilere bildirmek için bir mesajı yanıtlayın.
+         *NOT:* Yöneticiler tarafından kullanılırsa bunların hiçbiri tetiklenmez.
+
+         *Yalnızca yöneticiler:*
+          • `/reports <on/off>`*:* rapor ayarını değiştirin veya mevcut durumu görüntüleyin.
+          • Eğer pm'de yapılırsa, durumunuzu değiştirir.
+          • Gruptaysa, o grupların durumunu değiştirir.
+
+rules_help: |
+      • `/rules`*:* bu sohbet için kuralları alır.
+       *Yalnızca yöneticiler:*
+      • `/setrules <kurallar buraya>`*:* bu sohbet için kuralları belirler.
+      • `/clearrules`*:* bu sohbet için kuralları temizler.
+
+userinfo_help: |
+      - /setbio <metin>: cevap verirken başka bir kullanıcının biyografisini kaydeder
+      - /bio: sizin veya başka bir kullanıcının biyografisini alır. Bu kendi başınıza ayarlanamaz.
+      - /setme <metin>: bilgilerinizi ayarlar.
+      - /me: sizin veya başka bir kullanıcının bilgilerini alır.
+
+warns_help: |
+    • `/warns <kullanıcı etiketi>`*:* bir kullanıcının uyarı sayısını ve uyarıların nedenini alır.
+      • `/warnlist`*:* mevcut tüm uyarı filtrelerinin listesi
+
+      *Yalnızca yöneticiler:*
+      • `/warn <kullanıcı etiketi>`*:* bir kullanıcıyı uyarır. 3 uyarıdan sonra kullanıcı gruptan uzaklaştırılır. Yanıt olarak da kullanılabilir.
+      • `/resetwarn <kullanıcı etiketi>`*:* bir kullanıcı için uyarıları sıfırlar. Cevap olarak da kullanılabilir.
+      • `/addwarn <anahtar kelime> <yanıt mesajı>`*:* belirli bir anahtar kelime için bir uyarı filtresi ayarlayın. Anahtar kelimenizi
+      bir cümle ise, tırnak işaretleri içine alın: `/addwarn "çok kızgın" Bu kızgın bir kullanıcıdır`.
+      • `/nowarn <anahtar kelime>`*:* bir uyarı filtresini durdur
+      • `/warnlimit <sayı>`*:* uyarı sınırını ayarlayın
+      • `/strongwarn <on/yes/off/no>`*:* Açık olarak ayarlanırsa, uyarı sınırının aşılması yasakla sonuçlanır. Aksi takdirde, sadece tekme atar.
+
+greetings_help: |
+      *Yalnızca yöneticiler:*
+       • `/welcome <on/off>`*:* karşılama mesajlarını etkinleştirir/devre dışı bırakır.
+       • `/welcome`*:* mevcut karşılama ayarlarını gösterir.
+       • `/welcome noformat`*:* biçimlendirme olmadan mevcut karşılama ayarlarını gösterir - karşılama mesajlarınızı geri dönüştürmek için kullanışlıdır!
+       • `/goodbye`*:* `/welcome` ile aynı kullanım ve argümanlar.
+       • `/setwelcome <sometext>`*:* özel bir karşılama mesajı ayarlar. Medyaya yanıt vermek için kullanılıyorsa, o medyayı kullanır.
+       • `/setgoodbye <sometext>`*:* özel bir veda mesajı ayarlayın. Medyaya yanıt vermek için kullanılıyorsa, o medyayı kullanır.
+       • `/resetwelcome`*:* varsayılan karşılama mesajına sıfırlama.
+       • `/resetgoodbye`*:* varsayılan hoşçakal mesajına sıfırlama.
+       • `/cleanwelcome <on/off>`*:* Yeni üyelerde, sohbetin spam olmasını önlemek için önceki karşılama mesajını silmeyi deneyin.
+       • `/welcomemutehelp`*:* karşılama sessize almaları hakkında bilgi verir.
+       • `/cleanservice <on/off`*:* karşılama/kalan servis mesajlarını siler.
+       *Örnek:*
+      kullanıcı sohbete katıldı, kullanıcı sohbetten ayrıldı.
+
+      *Hoş geldiniz Bilgi:*
+       • `/welcomehelp`*:* özel karşılama/güle güle mesajları için daha fazla biçimlendirme bilgisi görüntüleyin.
+
+nation_help: |
+      - /eagle - Tüm Eagle Union üyelerini listeler.
+      - /royals - Tüm Kraliyet Uluslarını listeler.
+      - /sakuras - Tüm Sakura Uluslarını listeler.
+      - /sardegnas - Tüm Sardegnas Uluslarını listeler.
+      - /neptunians - Tüm Neptunia Uluslarını listeler.
+      Not: Bu komutlar, özel bot ayrıcalıklarına sahip kullanıcıları listeler ve yalnızca onlar tarafından kullanılabilir.
+      Bunlar hakkında daha fazla bilgi almak için @YorktownEagleUnion adresini ziyaret edebilirsiniz.
+
+nlp_help: |
+
+      *Sohbet Odası Spam Tahmini*
+       Bu özellik, @Intellivoid'in Coffeehouse AI özelliğini kullanarak
+       sohbet mesajlarını işler ve spam'i tespit eder.
+       Bu, Coffehouse NLP'si altında gelir. Hakkında daha fazla öğrenmek için 
+        [tıklayın!](https://docs.intellivoid.net/coffeehouse/v1/nlp/spam_prediction/chatroom)
+       *Komut:*
+        • `/nlpstat <on/off/yes/no>`*:* sohbetinizde NLP'yi açın
