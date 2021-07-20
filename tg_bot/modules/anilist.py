@@ -12,7 +12,7 @@ from telegram import (
 import requests
 import math
 import time
-from tg_bot.modules.helper_funcs.decorators import kigcmd
+from tg_bot.modules.helper_funcs.decorators import psycmd
 
 def shorten(description, info="anilist.co"):
     msg = ""
@@ -31,18 +31,18 @@ def shorten(description, info="anilist.co"):
 
 # time formatter from uniborg
 def t(milliseconds: int) -> str:
-    """Inputs time in milliseconds, to get beautified time,
-    as string"""
+    """Güzelleştirilmiş zaman elde etmek için zamanı milisaniye cinsinden girer,
+    dize olarak"""
     seconds, milliseconds = divmod(int(milliseconds), 1000)
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = (
-        ((str(days) + " Days, ") if days else "")
-        + ((str(hours) + " Hours, ") if hours else "")
-        + ((str(minutes) + " Minutes, ") if minutes else "")
-        + ((str(seconds) + " Seconds, ") if seconds else "")
-        + ((str(milliseconds) + " ms, ") if milliseconds else "")
+        ((str(days) + " Gün, ") if days else "")
+        + ((str(hours) + " Saat, ") if hours else "")
+        + ((str(minutes) + " Dakika, ") if minutes else "")
+        + ((str(seconds) + " Saniye, ") if seconds else "")
+        + ((str(milliseconds) + " MiliSaniye, ") if milliseconds else "")
     )
     return tmp[:-2]
 
@@ -54,7 +54,7 @@ airing_query = """
         episodes
         title {
           romaji
-          english
+          turkish
           native
         }
         nextAiringEpisode {
@@ -72,7 +72,7 @@ query ($id: Int) {
         id
         title {
           romaji
-          english
+          turkish
           native
         }
      }
@@ -85,7 +85,7 @@ anime_query = """
         id
         title {
           romaji
-          english
+          turkish
           native
         }
         description (asHtml: false)
@@ -139,7 +139,7 @@ query ($id: Int,$search: String) {
         id
         title {
           romaji
-          english
+          turkish
           native
         }
         description (asHtml: false)
@@ -160,7 +160,7 @@ query ($id: Int,$search: String) {
 
 url = "https://graphql.anilist.co"
 
-@kigcmd(command="airing")
+@psycmd(command="airing")
 def airing(update: Update, context: CallbackContext):
     message = update.effective_message
     search_str = message.text.split(" ", 1)
@@ -182,7 +182,7 @@ def airing(update: Update, context: CallbackContext):
         msg += f"\n*Episode*:{response['episodes']}\n*Status*: `N/A`"
     update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
-@kigcmd(command="anime")
+@psycmd(command="anime")
 def anime(update: Update, context: CallbackContext):
     message = update.effective_message
     search = message.text.split(" ", 1)
@@ -255,7 +255,7 @@ def anime(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
 
-@kigcmd(command="character")
+@psycmd(command="character")
 def character(update: Update, context: CallbackContext):
     message = update.effective_message
     search = message.text.split(" ", 1)
@@ -289,7 +289,7 @@ def character(update: Update, context: CallbackContext):
                 msg.replace("<b>", "</b>"), parse_mode=ParseMode.MARKDOWN
             )
 
-@kigcmd(command="manga")
+@psycmd(command="manga")
 def manga(update: Update, context: CallbackContext):
     message = update.effective_message
     search = message.text.split(" ", 1)
