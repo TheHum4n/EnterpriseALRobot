@@ -24,22 +24,22 @@ fileConfig('logging.ini')
 
 log = logging.getLogger('[Enterprise]')
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
-log.info("[Psycho] Psycho başlatılıyor. The Psycho's Bot")
-log.info("[Psycho] Bot hiçbir (t.me/The_Psychos) kanalına bağlıdır.")
-log.info("[Psycho] Projeyi Değiştirip Sürdüren Kişi : (t.me/IAMCR4ZY)")
+log.info("[KIGYO] Kigyo is starting. | An Eagle Union Project. | Licensed under GPLv3.")
+log.info("[KIGYO] Not affiliated to Azur Lane or Yostar in any way whatsoever.")
+log.info("[KIGYO] Project maintained by: github.com/Dank-del (t.me/dank_as_fuck)")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 7:
     log.error(
-        "[Psycho]En az 3.7'lik bir python sürümüne sahip olmalısınız! Birçok özellik buna bağlıdır. Bot ayrılıyor."
+        "[KIGYO] You MUST have a python version of at least 3.7! Multiple features depend on this. Bot quitting."
     )
     quit(1)
 
 parser = ConfigParser()
 parser.read("config.ini")
-psyconfig = parser["psyconfig"]
+kigconfig = parser["kigconfig"]
 
-class PsychoINIT:
+class KigyoINIT:
     def __init__(self, parser):
         self.parser = parser
         self.SYS_ADMIN = self.parser.getint('SYS_ADMIN', 0)
@@ -78,7 +78,7 @@ class PsychoINIT:
 
     def init_sw(self):
         if self.spamwatch_api is None:
-            log.warning("Spamİzleyici API anahtarı yok! config.ini kısmını kontrol et.")
+            log.warning("SpamWatch API anahtarı eksik! config.ini'ı kontrol et.")
             return None
         else:
             try:
@@ -86,49 +86,49 @@ class PsychoINIT:
                 return sw
             except:
                 sw = None
-                log.warning("Spamİzleyici'ye bağlanılamadı!")
+                log.warning("SpamWatch'a bağlanılamıyor!")
                 return sw
 
 
-PSnit = PSYCHOINIT(parser=psychoconfig)
+KInit = KigyoINIT(parser=kigconfig)
 
-SYS_ADMIN = PSnit.SYS_ADMIN
-OWNER_ID = PSnit.OWNER_ID
-OWNER_USERNAME = PSnit.OWNER_USERNAME
-APP_ID = PSnit.APP_ID
-API_HASH = PSnit.API_HASH
-WEBHOOK = PSnit.WEBHOOK
-URL = PSnit.URL
-CERT_PATH = PSnit.CERT_PATH
-PORT = PSnit.PORT
-INFOPIC = PSnit.INFOPIC
-DEL_CMDS = PSnit.DEL_CMDS
-ALLOW_EXCL = PSnit.ALLOW_EXCL
-CUSTOM_CMD = PSnit.CUSTOM_CMD
-BAN_STICKER = PSnit.BAN_STICKER
-TOKEN = PSnit.TOKEN
-DB_URI = PSnit.DB_URI
-LOAD = PSnit.LOAD
-MESSAGE_DUMP = PSnit.MESSAGE_DUMP
-GBAN_LOGS = PSnit.GBAN_LOGS
-NO_LOAD = PSnit.NO_LOAD
-SUDO_USERS = [OWNER_ID] + get_user_list("sudo kullanıcıları")
-DEV_USERS = [OWNER_ID] + get_user_list("devler")
-SUPPORT_USERS = get_user_list("destekçiler")
-SARDEGNA_USERS = get_user_list("sardegna'lar")
-WHITELIST_USERS = get_user_list("beyaz liste")
-SPAMMERS = get_user_list("kötü amaçlı kullanıcılar")
-spamwatch_api = PSnit.spamwatch_api
-CASH_API_KEY = PSnit.CASH_API_KEY
-TIME_API_KEY = PSnit.TIME_API_KEY
-WALL_API = PSnit.WALL_API
-LASTFM_API_KEY = PSnit.LASTFM_API_KEY
-CF_API_KEY = PSnit.CF_API_KEY
+SYS_ADMIN = KInit.SYS_ADMIN
+OWNER_ID = KInit.OWNER_ID
+OWNER_USERNAME = KInit.OWNER_USERNAME
+APP_ID = KInit.APP_ID
+API_HASH = KInit.API_HASH
+WEBHOOK = KInit.WEBHOOK
+URL = KInit.URL
+CERT_PATH = KInit.CERT_PATH
+PORT = KInit.PORT
+INFOPIC = KInit.INFOPIC
+DEL_CMDS = KInit.DEL_CMDS
+ALLOW_EXCL = KInit.ALLOW_EXCL
+CUSTOM_CMD = KInit.CUSTOM_CMD
+BAN_STICKER = KInit.BAN_STICKER
+TOKEN = KInit.TOKEN
+DB_URI = KInit.DB_URI
+LOAD = KInit.LOAD
+MESSAGE_DUMP = KInit.MESSAGE_DUMP
+GBAN_LOGS = KInit.GBAN_LOGS
+NO_LOAD = KInit.NO_LOAD
+SUDO_USERS = [OWNER_ID] + get_user_list("sudos")
+DEV_USERS = [OWNER_ID] + get_user_list("devs")
+SUPPORT_USERS = get_user_list("supports")
+SARDEGNA_USERS = get_user_list("sardegnas")
+WHITELIST_USERS = get_user_list("whitelists")
+SPAMMERS = get_user_list("spammers")
+spamwatch_api = KInit.spamwatch_api
+CASH_API_KEY = KInit.CASH_API_KEY
+TIME_API_KEY = KInit.TIME_API_KEY
+WALL_API = KInit.WALL_API
+LASTFM_API_KEY = KInit.LASTFM_API_KEY
+CF_API_KEY = KInit.CF_API_KEY
 
-SPB_MODE = psychoconfig.getboolean('SPB_MODE', False)
+SPB_MODE = kigconfig.getboolean('SPB_MODE', False)
 
 # SpamWatch
-sw = PSnit.init_sw()
+sw = KInit.init_sw()
 
 from tg_bot.modules.sql import SESSION
 
@@ -149,7 +149,7 @@ if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
 def spamfilters(text, user_id, chat_id):
     # print("{} | {} | {}".format(text, user_id, chat_id))
     if int(user_id) in SPAMMERS:
-        print("Bu kullanıcı kötü amaçlı olarak işaretlenmiş!")
+        print("Bu kullanıcı bir spam gönderici!")
         return True
     else:
         return False
