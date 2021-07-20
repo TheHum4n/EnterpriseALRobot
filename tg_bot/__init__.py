@@ -37,7 +37,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 7:
 
 parser = ConfigParser()
 parser.read("config.ini")
-psychoconfig = parser["psychoconfig"]
+psyconfig = parser["psyconfig"]
 
 class PsychoINIT:
     def __init__(self, parser):
